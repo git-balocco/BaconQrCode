@@ -201,7 +201,7 @@ final class Encoder
         }
 
         for ($i = 0; $i < $length; $i += 2) {
-            $byte = $bytes[$i] & 0xff;
+            $byte = (int)$bytes[$i] & 0xff;
 
             if (($byte < 0x81 || $byte > 0x9f) && $byte < 0xe0 || $byte > 0xeb) {
                 return false;
